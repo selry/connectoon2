@@ -1,0 +1,861 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+.blind {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  margin: 0;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+a {
+  margin: 0;
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+td {
+  text-align: center;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  font-family: "나눔고딕", NanumGothic, sans-serif;
+}
+
+img {
+  vertical-align: top;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  border: 0;
+}
+
+body {
+  font-size: 12px;
+  font-family: NanumGothic, "나눔 고딕", sans-serif;
+}
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+.clear_fix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+
+.elip1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wrap {
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100%;
+}
+
+.title {
+  margin: 10px 0;
+  font-family: "Helvetica", NanumGothic, "나눔고딕", sans-serif;
+}
+@media screen and (min-width: 1024px) {
+  .title {
+    font-size: 48px;
+    text-align: left;
+    margin: 10px;
+  }
+}
+
+.nav_item {
+  float: left;
+  width: 25%;
+}
+.nav_item:nth-child(3) {
+  display: none;
+}
+.nav_item:last-child {
+  width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .nav_item {
+    width: 10%;
+  }
+  .nav_item:nth-child(3) {
+    display: block;
+  }
+  .nav_item:nth-child(5) {
+    display: none;
+  }
+  .nav_item:last-child {
+    width: 60%;
+  }
+}
+
+.nav_link {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  background-color: #12314b;
+  color: #fff;
+}
+@media screen and (min-width: 1024px) {
+  .nav_link {
+    height: 50px;
+    line-height: 50px;
+  }
+}
+
+.search {
+  display: block;
+  padding: 0 10px 10px;
+  background-color: #12314b;
+}
+@media screen and (min-width: 1024px) {
+  .search {
+    padding-top: 10px;
+  }
+}
+
+.search_label {
+  display: block;
+  position: relative;
+}
+
+.search_input {
+  padding: 0 30px 0 5px;
+  width: 100%;
+  height: 30px;
+  border: 0;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 1024px) {
+  .search_input {
+    padding: 0 40px 0 10px;
+  }
+}
+.search_input::placeholder {
+  font-size: 12px;
+}
+@media screen and (min-width: 1024px) {
+  .search_input::placeholder {
+    font-size: 16px;
+  }
+}
+
+.button_search {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background: url("../img/icon-search.png") no-repeat center center;
+  background-size: 20px auto;
+  outline: 0;
+}
+@media screen and (min-width: 1024px) {
+  .button_search {
+    top: 0;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.button_notice {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #7cb2e0;
+  color: #000;
+}
+
+.link_notice {
+  display: block;
+  padding: 0 10px;
+  color: #12314b;
+  background-color: #cfe3f3;
+  height: 40px;
+  line-height: 40px;
+}
+
+.item_config {
+  float: left;
+  width: 50%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #7cb2e0;
+}
+
+.item_config + .item_config {
+  background-color: #cfe3f3;
+}
+
+.custom_label {
+  position: relative;
+  display: inline-block;
+  padding-left: 25px;
+  line-height: 15px;
+}
+
+.custom_check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border: 1px solid #12314b;
+  box-sizing: border-box;
+}
+
+.custom_input.checked ~ .custom_check {
+  background-color: #12314b;
+}
+.custom_input.checked ~ .custom_check:after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  width: 3px;
+  height: 6px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+@media screen and (min-width: 1024px) {
+  .section_inner {
+    float: left;
+    width: 250px;
+    padding: 40px 60px;
+  }
+}
+
+.login_wrap {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .login_wrap {
+    display: block;
+  }
+  .login_wrap .form_inner {
+    margin-top: 0;
+  }
+  .login_wrap .form_inner.login {
+    line-height: 98px;
+    text-align: center;
+  }
+  .login_wrap .form_inner + .form_inner {
+    margin-top: 10px;
+  }
+  .login_wrap .button_form {
+    width: 80px;
+  }
+  .login_wrap .button_form.logout {
+    width: 150px;
+  }
+  .login_wrap .custom_label {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .category_wrap {
+    margin-top: 40px;
+  }
+}
+
+.list_inner_category {
+  margin-top: 5px;
+}
+@media screen and (min-width: 1024px) {
+  .list_inner_category {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .item_category + .item_category .list_inner_category {
+    margin-top: 10px;
+  }
+}
+
+.item_inner_category {
+  position: relative;
+  float: left;
+  width: 33.3333333333%;
+  height: 40px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.item_inner_category + .item_inner_category {
+  border-left: 1px solid #fff;
+}
+
+.item_category + .item_category .item_inner_category {
+  border-bottom: 1px solid #fff;
+}
+
+.category_label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  line-height: 40px;
+  background-color: #7cb2e0;
+  color: #000;
+}
+
+.category_input:checked ~ .category_label {
+  background-color: #1c4c74;
+  color: #fff;
+}
+
+.button_search_category {
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  background-color: #f2fc86;
+}
+@media screen and (min-width: 1024px) {
+  .button_search_category {
+    font-size: 14px;
+  }
+}
+
+.notice_wrap {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .notice_wrap {
+    display: block;
+    overflow: hidden;
+    padding: 40px 60px 40px 0;
+  }
+  .notice_wrap .list_notice {
+    height: 360px;
+    overflow: scroll;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .webtoon_wrap {
+    padding: 0 60px;
+  }
+}
+
+.button_wrap {
+  margin-top: 10px;
+}
+@media screen and (min-width: 1024px) {
+  .button_wrap {
+    margin-top: 0;
+  }
+}
+
+.button_webtoon {
+  float: left;
+  width: 50%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #7cb2e0;
+  color: #000;
+}
+@media screen and (min-width: 1024px) {
+  .button_webtoon {
+    background-color: #1c4c74;
+    color: #fff;
+  }
+}
+
+.button_webtoon.selected {
+  background-color: #1c4c74;
+  color: #fff;
+}
+
+@media screen and (min-width: 1024px) {
+  .button_webtoon + .button_webtoon {
+    border-left: 1px solid #fff;
+    box-sizing: border-box;
+  }
+}
+
+.list_chart {
+  height: 204px;
+  overflow: auto;
+  border-bottom: 1px solid #12314b;
+}
+@media screen and (min-width: 1024px) {
+  .list_chart {
+    float: left;
+    width: 50%;
+    height: auto;
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .list_chart + .list_chart {
+    border-left: 1px solid #12314b;
+    box-sizing: border-box;
+  }
+}
+
+.item_chart {
+  color: #1c4c74;
+}
+
+.item_chart + .item_chart {
+  border-top: 1px solid #1c4c74;
+}
+
+.item_column_chart {
+  float: left;
+  width: 15%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.item_column_chart.wide {
+  width: 35%;
+}
+
+.link_chart {
+  display: block;
+  height: 100%;
+  color: #1c4c74;
+}
+
+.button_favorite {
+  display: block;
+  height: 100%;
+  background: url("../img/icon-like.png") no-repeat center center;
+  background-size: 20px auto;
+}
+
+.favorite_inner {
+  margin: 10px 10px 0;
+}
+
+.button_go_back {
+  float: left;
+  width: 30px;
+  height: 30px;
+  background: url("../img/icon-back.png") no-repeat center center;
+  background-size: 20px auto;
+}
+@media screen and (min-width: 1024px) {
+  .button_go_back {
+    display: none;
+  }
+}
+
+.button_edit_favorite {
+  display: block;
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #12314b;
+  color: #fff;
+}
+@media screen and (min-width: 1024px) {
+  .button_edit_favorite {
+    display: none;
+  }
+}
+
+.view_button_wrap .button_edit_favorite {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .view_button_wrap .button_edit_favorite {
+    display: inline-block;
+    vertical-align: top;
+    width: 150px;
+  }
+}
+
+.custom_select {
+  position: relative;
+  float: left;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #12314b;
+  text-align: center;
+}
+
+.button_align {
+  display: block;
+  height: 30px;
+  background-color: #fff;
+  color: #12314b;
+}
+.button_align:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 10px;
+  border-style: solid;
+  border-width: 6px 5px 0;
+  border-color: #12314b transparent transparent transparent;
+}
+
+.button_align.selected:after {
+  border-width: 0 5px 6px;
+  border-color: transparent transparent #12314b transparent;
+}
+
+.list_align .button_align:after {
+  display: none;
+}
+
+.list_align {
+  position: absolute;
+  top: 31px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  border: solid #12314b;
+  border-width: 0 1px 1px;
+}
+
+.item_align + .item_align {
+  border-top: 1px solid #1c4c74;
+}
+
+.view_button_wrap {
+  float: right;
+}
+
+.button_view {
+  display: inline-block;
+  vertical-align: top;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #12314b;
+  box-sizing: border-box;
+}
+
+.button_view + .button_view {
+  margin-left: -4px;
+}
+
+.button_view.list {
+  background: url("../img/icon-list.png") no-repeat center center;
+  background-size: 20px auto;
+}
+
+.button_view.grid {
+  background: url("../img/icon-grid.png") no-repeat center center;
+  background-size: 20px auto;
+}
+
+.list_webtoon {
+  margin-top: 10px;
+  border: solid #12314b;
+  border-width: 1px 0;
+}
+
+.item_webtoon {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .item_webtoon {
+    width: 33.3333333333%;
+  }
+}
+
+.link_webtoon {
+  display: block;
+  color: #12314b;
+  font-size: 14px;
+}
+
+.item_order {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #12314b;
+  color: #fff;
+  font-family: Helvetica, NanumGothic, "나눔 고딕", sans-serif;
+}
+
+.button_delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  border: solid #12314b;
+  border-width: 0 0 1px 1px;
+  box-sizing: border-box;
+  background: url("../img/icon-delete.png") #fff no-repeat center center;
+  background-size: 20px auto;
+}
+
+.list_webtoon.list .item_webtoon + .item_webtoon {
+  border-top: 1px solid #12314b;
+}
+@media screen and (min-width: 1024px) {
+  .list_webtoon.list .item_webtoon + .item_webtoon:nth-child(-n+3) {
+    border-top: 0;
+  }
+}
+.list_webtoon.list .item_img {
+  float: left;
+  border-right: 1px solid #12314b;
+}
+.list_webtoon.list .item_title {
+  line-height: 100px;
+}
+
+.list_webtoon.grid .item_webtoon {
+  width: 50%;
+}
+.list_webtoon.grid .item_webtoon:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #12314b;
+}
+.list_webtoon.grid .item_webtoon:nth-child(odd):before {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .list_webtoon.grid .item_webtoon {
+    width: 16.6666666667%;
+  }
+  .list_webtoon.grid .item_webtoon:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #12314b;
+  }
+  .list_webtoon.grid .item_webtoon:nth-child(odd):before {
+    display: block;
+  }
+  .list_webtoon.grid .item_webtoon:nth-child(6n+1):before {
+    display: none;
+  }
+}
+.list_webtoon.grid .item_img img {
+  width: 100%;
+  height: 100%;
+}
+.list_webtoon.grid .item_title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30px;
+  line-height: 30px;
+  background-color: #12314b;
+  color: #fff;
+}
+
+.form_wrap {
+  margin: 40px 20px 0;
+  padding: 20px 0;
+  border: solid #7cb2e0;
+  border-width: 1px 0;
+}
+@media screen and (min-width: 1024px) {
+  .form_wrap {
+    margin: 40px auto 0;
+    width: 500px;
+  }
+}
+
+.form_inner {
+  margin-top: 10px;
+}
+@media screen and (min-width: 1024px) {
+  .form_inner {
+    margin-top: 30px;
+  }
+}
+
+.form_inner .highlight {
+  display: inline-block;
+  line-height: normal;
+  border-bottom: 1px solid #1c4c74;
+  color: #1c4c74;
+  font-size: 16px;
+}
+
+.form_label {
+  float: left;
+  width: 70px;
+  height: 30px;
+  line-height: 30px;
+  color: #12314b;
+  font-size: 14px;
+}
+
+.form_input_wrap {
+  overflow: hidden;
+}
+
+.form_input {
+  width: 100%;
+  height: 30px;
+  border-bottom: 1px solid #12314b;
+  box-sizing: border-box;
+}
+.form_input::placeholder {
+  text-align: center;
+}
+
+.form_button_wrap {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.button_form {
+  display: inline-block;
+  vertical-align: top;
+  background-color: #12314b;
+  color: #fff;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.button_form.logout {
+  width: 120px;
+}
+
+.button_form.send {
+  width: 120px;
+}
+
+@media screen and (min-width: 1024px) {
+  .search_wrap {
+    width: 780px;
+    margin: 20px auto 0;
+  }
+}
+
+.button_search_word {
+  float: left;
+  width: 50%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #7cb2e0;
+  color: #12314b;
+  font-size: 14px;
+  text-align: center;
+}
+
+.button_search_word.selected {
+  background-color: #1c4c74;
+  color: #fff;
+}
+
+.button_search_word.clear {
+  float: none;
+  display: block;
+  width: 100%;
+}
+
+.item_search {
+  height: 30px;
+  line-height: 30px;
+}
+
+.item_search + .item_search {
+  border-top: 1px solid #7cb2e0;
+}
+
+.table_webtoon {
+  margin: 0 auto;
+  /* width: 800px; */
+}
+.table_webtoon td {
+  text-align: center;
+}
+
+.button_admin_webtoon {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #12314b;
+  color: #fff;
+  text-decoration: none;
+}
+
+.input_webtoon {
+  display: block;
+  text-align: center;
+  border: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

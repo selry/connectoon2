@@ -1,0 +1,683 @@
+@charset "utf-8";
+@import '_reset.scss';
+@import '_variable.scss';
+@mixin mq_pc {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+body {
+    font-size: 12px;
+    font-family: NanumGothic, "나눔 고딕", sans-serif;
+    @include mq_pc {
+        font-size: 14px;
+    }
+}
+.clear_fix {
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+.hidden {
+    display: none;
+}
+.elip1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.wrap {
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100%;
+}
+.title {
+    margin: 10px 0;
+    font-family: "Helvetica", NanumGothic, "나눔고딕", sans-serif;
+    @include mq_pc {
+        font-size: 48px;
+        text-align: left;
+        margin: 10px;
+    }
+}
+.nav_item {
+    float: left;
+    width: 25%;
+    &:nth-child(3) {
+        display: none;
+    }
+    &:last-child {
+        width: 100%;
+    }
+    @include mq_pc {
+        width: 10%;
+        &:nth-child(3) {
+            display: block;
+        }
+        &:nth-child(5) {
+            display: none;
+        }
+        &:last-child {
+            width: 60%;
+        }
+    }
+}
+.nav_link {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    background-color: $color;
+    color: #fff;
+    @include mq_pc {
+        height: 50px;
+        line-height: 50px;
+    }
+}
+.search {
+    display: block;
+    padding: 0 10px 10px;
+    background-color: $color;
+    @include mq_pc {
+        padding-top: 10px;
+    }
+}
+.search_label {
+    display: block;
+    position: relative;
+}
+.search_input {
+    padding: 0 30px 0 5px;
+    width: 100%;
+    height: 30px;
+    border: 0;
+    box-sizing: border-box;
+    @include mq_pc {
+        padding: 0 40px 0 10px;
+    }
+    &::placeholder {
+        font-size: 12px;
+        @include mq_pc {
+            font-size: 16px;
+        }
+    }
+}
+.button_search {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: url("../img/icon-search.png") no-repeat center center;
+    background-size: 20px auto;
+    outline: 0;
+    @include mq_pc {
+        top: 0;
+        width: 30px;
+        height: 30px;
+    }
+}
+// config.html
+.button_notice {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: $color-lighter;
+    color: #000;
+}
+.link_notice {
+    display: block;
+    padding: 0 10px;
+    color: $color;
+    background-color: $color-lightest;
+    height: 40px;
+    line-height: 40px;
+}
+.item_config {
+    float: left;
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: $color-lighter;
+}
+.item_config+.item_config {
+    background-color: $color-lightest;
+}
+.custom_label {
+    position: relative;
+    display: inline-block;
+    padding-left: 25px;
+    line-height: 15px;
+}
+.custom_check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border: 1px solid $color;
+    box-sizing: border-box;
+}
+.custom_input.checked~.custom_check {
+    background-color: $color;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 1px;
+        left: 4px;
+        width: 3px;
+        height: 6px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+}
+// index.html
+.section_inner {
+    @include mq_pc {
+        float: left;
+        width: 250px;
+        padding: 40px 60px;
+    }
+}
+.login_wrap {
+    display: none;
+    @include mq_pc {
+        display: block;
+        .form_inner {
+            margin-top: 0;
+        }
+        .form_inner.login {
+            line-height: 98px;
+            text-align: center;
+        }
+        .form_inner+.form_inner {
+            margin-top: 10px;
+        }
+        .button_form {
+            width: 80px;
+        }
+        .button_form.logout {
+            width: 150px;
+        }
+        .custom_label {
+            font-size: 12px;
+        }
+    }
+}
+.category_wrap {
+    @include mq_pc {
+        margin-top: 40px;
+    }
+}
+.list_inner_category {
+    margin-top: 5px;
+    @include mq_pc {
+        margin-top: 0;
+    }
+}
+.item_category+.item_category .list_inner_category {
+    @include mq_pc {
+        margin-top: 10px;
+    }
+}
+.item_inner_category {
+    position: relative;
+    float: left;
+    width: (100% / 3);
+    height: 40px;
+    color: #fff;
+    box-sizing: border-box;
+}
+.item_inner_category + .item_inner_category {
+    border-left: 1px solid #fff;
+}
+.item_category + .item_category .item_inner_category {
+    border-bottom: 1px solid #fff;
+}
+.category_label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    line-height: 40px;
+    background-color: $color-lighter;
+    color: #000;
+}
+.category_input:checked~.category_label {
+    background-color: $color-light;
+    color: #fff;
+}
+.button_search_category {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    background-color: $color-yellow;
+    @include mq_pc {
+        font-size: 14px;
+    }
+}
+.notice_wrap {
+    display: none;
+    @include mq_pc {
+        display: block;
+        overflow: hidden;
+        padding: 40px 60px 40px 0;
+        .list_notice {
+            height: 360px;
+            overflow: scroll;
+        }
+    }
+}
+.webtoon_wrap {
+    @include mq_pc {
+        padding: 0 60px;
+    }
+}
+.button_wrap {
+    margin-top: 10px;
+    @include mq_pc {
+        margin-top: 0;
+    }
+}
+.button_webtoon {
+    float: left;
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    background-color: $color-lighter;
+    color: #000;
+    @include mq_pc {
+        background-color: $color-light;
+        color: #fff;
+    }
+}
+.button_webtoon.selected {
+    background-color: $color-light;
+    color: #fff;
+}
+.button_webtoon+.button_webtoon {
+    @include mq_pc {
+        border-left: 1px solid #fff;
+        box-sizing: border-box;
+    }
+}
+.list_chart {
+    height: 204px;
+    overflow: auto;
+    border-bottom: 1px solid $color;
+    @include mq_pc {
+        float: left;
+        width: 50%;
+        height: auto;
+        display: block;
+    }
+}
+.list_chart+.list_chart {
+    @include mq_pc {
+        border-left: 1px solid $color;
+        box-sizing: border-box;
+    }
+}
+.item_chart {
+    color: $color-light;
+}
+.item_chart + .item_chart {
+    border-top: 1px solid $color-light;
+}
+.item_column_chart {
+    float: left;
+    width: 15%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.item_column_chart.wide {
+    width: 35%;
+}
+.link_chart {
+    display: block;
+    height: 100%;
+    color: $color-light;
+}
+.button_favorite {
+    display: block;
+    height: 100%;
+    background: url("../img/icon-like.png") no-repeat center center;
+    background-size: 20px auto;
+}
+// favorite.html
+.favorite_inner {
+    margin: 10px 10px 0;
+}
+.button_go_back {
+    float: left;
+    width: 30px;
+    height: 30px;
+    background: url("../img/icon-back.png") no-repeat center center;
+    background-size: 20px auto;
+    @include mq_pc {
+        display: none;
+    }
+}
+.button_edit_favorite {
+    display: block;
+    overflow: hidden;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: $color;
+    color: #fff;
+    @include mq_pc {
+        display: none;
+    }
+}
+.view_button_wrap .button_edit_favorite {
+    display: none;
+    @include mq_pc {
+        display: inline-block;
+        vertical-align: top;
+        width: 150px;
+    }
+}
+.custom_select {
+    position: relative;
+    float: left;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid $color;
+    text-align: center;
+}
+.button_align {
+    display: block;
+    height: 30px;
+    background-color: #fff;
+    color: $color;
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 10px;
+        border-style: solid;
+        border-width: 6px 5px 0;
+        border-color: $color transparent transparent transparent;
+    }
+}
+.button_align.selected:after {
+    border-width: 0 5px 6px;
+    border-color: transparent transparent $color transparent;
+}
+.list_align .button_align:after {
+    display: none;
+}
+.list_align {
+    position: absolute;
+    top: 31px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    border: solid $color;
+    border-width: 0 1px 1px;
+}
+.item_align+.item_align {
+    border-top: 1px solid $color-light;
+}
+.view_button_wrap {
+    float: right;
+}
+.button_view {
+    display: inline-block;
+    vertical-align: top;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $color;
+    box-sizing: border-box;
+}
+.button_view+.button_view {
+    margin-left: -4px;
+}
+.button_view.list {
+    background: url("../img/icon-list.png") no-repeat center center;
+    background-size: 20px auto;
+}
+.button_view.grid {
+    background: url("../img/icon-grid.png") no-repeat center center;
+    background-size: 20px auto;
+}
+.list_webtoon {
+    margin-top: 10px;
+    border: solid $color;
+    border-width: 1px 0;
+}
+.item_webtoon {
+    position: relative;
+    float: left;
+    width: 100%;
+    @include mq_pc {
+        width: (100% / 3);
+    }
+}
+.link_webtoon {
+    display: block;
+    color: $color;
+    font-size: 14px;
+}
+.item_order {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background-color: $color;
+    color: #fff;
+    font-family: Helvetica, NanumGothic, "나눔 고딕", sans-serif;
+}
+.button_delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border: solid $color;
+    border-width: 0 0 1px 1px;
+    box-sizing: border-box;
+    background: url("../img/icon-delete.png") #fff no-repeat center center;
+    background-size: 20px auto;
+}
+.list_webtoon.list {
+    .item_webtoon+.item_webtoon {
+        border-top: 1px solid $color;
+        @include mq_pc {
+            &:nth-child(-n+3) {
+                border-top: 0;
+            }
+        }
+    }
+    .item_img {
+        float: left;
+        border-right: 1px solid $color;
+    }
+    .item_title {
+        line-height: 100px;
+    }
+}
+.list_webtoon.grid {
+    .item_webtoon {
+        width: 50%;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            background-color: $color;
+        }
+        &:nth-child(odd):before {
+            display: none;
+        }
+        @include mq_pc {
+            width: (100% / 6);
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1px;
+                height: 100%;
+                background-color: $color;
+            }
+            &:nth-child(odd):before {
+                display: block;
+            }
+            &:nth-child(6n+1):before {
+                display: none;
+            }
+        }
+    }
+    .item_img img {
+        width: 100%;
+        height: 100%;
+    }
+    .item_title {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 30px;
+        line-height: 30px;
+        background-color: $color;
+        color: #fff;
+    }
+}
+// find_password.html
+.form_wrap {
+    margin: 40px 20px 0;
+    padding: 20px 0;
+    border: solid $color-lighter;
+    border-width: 1px 0;
+    @include mq_pc {
+        margin: 40px auto 0;
+        width: 500px;
+    }
+}
+.form_inner {
+    margin-top: 10px;
+    @include mq_pc {
+        margin-top: 30px;
+    }
+}
+.form_inner .highlight {
+    display: inline-block;
+    line-height: normal;
+    border-bottom: 1px solid $color-light;
+    color: $color-light;
+    font-size: 16px;
+}
+.form_label {
+    float: left;
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    color: $color;
+    font-size: 14px;
+}
+.form_input_wrap {
+    overflow: hidden;
+}
+.form_input {
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid $color;
+    box-sizing: border-box;
+    &::placeholder {
+        text-align: center;
+    }
+}
+.form_button_wrap {
+    margin-top: 20px;
+    text-align: center;
+}
+.button_form {
+    display: inline-block;
+    vertical-align: top;
+    background-color: $color;
+    color: #fff;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: center;
+}
+.button_form.logout {
+    width: 120px;
+}
+.button_form.send {
+    width: 120px;
+}
+// search.html
+.search_wrap {
+    @include mq_pc {
+        width: 780px;
+        margin: 20px auto 0;
+    }
+}
+.button_search_word {
+    float: left;
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    background-color: $color-lighter;
+    color: $color;
+    font-size: 14px;
+    text-align: center;
+}
+.button_search_word.selected {
+    background-color: $color-light;
+    color: #fff;
+}
+.button_search_word.clear {
+    float: none;
+    display: block;
+    width: 100%;
+}
+.item_search {
+    height: 30px;
+    line-height: 30px;
+}
+.item_search+.item_search {
+    border-top: 1px solid $color-lighter;
+}
+// admin.html
+.table_webtoon {
+    margin: 0 auto;
+    /* width: 800px; */
+    td {
+        text-align: center;
+    }
+}
+.button_admin_webtoon {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #12314b;
+    color: #fff;
+    text-decoration: none;
+}
+.input_webtoon {
+    display: block;
+    text-align: center;
+    border: 0;
+}
